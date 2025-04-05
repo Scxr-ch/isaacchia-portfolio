@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/path/to/fonts/Roboto-Regular.woff2') format('woff2'),
+         url('/path/to/fonts/Roboto-Regular.woff') format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+}
+.primary-100 { background-color: #E3E7F6; }
+.primary-200 { background-color: #B3B8EB; }
+.primary-300 { background-color: #8196DA; }
+.primary-400 { background-color: #5271C0; }
+.primary-500 { background-color: #384F89; }
+.primary-600 { background-color: #202F56; }
+.primary-700 { background-color: #0A1228; }
+
+.secondary-100 { background-color: #CFDAFC; }
+.secondary-200 { background-color: #95B2F8; }
+.secondary-300 { background-color: #4B8BF4; }
+.secondary-400 { background-color: #2867C2; }
+.secondary-500 { background-color: #174686; }
+.secondary-600 { background-color: #09274F; }
+.secondary-700 { background-color: #021028; }
+
+.tertiary-100 { background-color: #D1D7EC; }
+.tertiary-200 { background-color: #A0B0D8; }
+.tertiary-300 { background-color: #6F8AC5; }
+.tertiary-400 { background-color: #506B95; }
+.tertiary-500 { background-color: #354466; }
+.tertiary-600 { background-color: #1B253A; }
+.tertiary-700 { background-color: #0B111D; }
+
+.quaternary-100 { background-color: #E6EAFB; }
+.quaternary-200 { background-color: #B5C0F3; }
+.quaternary-300 { background-color: #8198EB; }
+.quaternary-400 { background-color: #4470E1; }
+.quaternary-500 { background-color: #2D4FA3; }
+.quaternary-600 { background-color: #1A3068; }
+.quaternary-700 { background-color: #081433; }
+
+.scroll{
+    animation:  infinite-scroll 25s linear infinite;
+}
+.three-d{
+-webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@keyframes infinite-scroll{
+    0% { transform: translateX(0%) }
+    100% { transform: translateX(-50%) }
+}
+.righteous-regular {
+    font-family: "Righteous", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+
+
+.inter-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+.moveup{
+    animation: movein 0.5s linear ;
+}
+@keyframes movein {
+    0%{ transform: translateY(40px) ;opacity:0.5}
+    100%{transform:translateY(0px) ;opacity:1;}
+}
+.movedown{
+    animation: movedown 0.5s linear ;
+}
+@keyframes movedown {
+    0%{ transform: translateY(-40px);opacity:0.5}
+    100%{transform:translateY(0px) ;opacity:1;}
+}
+
+.home{
+    animation: movedowns  0.5s linear ;
+}
+
+@keyframes movedowns {
+    0%{ transform: translateY(-60px);opacity:0.5}
+    100%{transform:translateY(0px) ;opacity:1;}
+}
+
+.first{
+    animation: first  0.5s linear ;
+}
+@keyframes first{
+    0% { transform: translateX(-40px); opacity: 0; }
+    50% { transform: translateX(-20px); opacity: 0.5; }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+
+.button:hover{
+    scale:1.1;
+    background-color: white;
+    
+}
+
