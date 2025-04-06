@@ -3,9 +3,10 @@ import SSTicon from "./assets/SST_logo.png"
 import Railtech1 from "./assets/Railtech1.jpg"
 import Railtech2 from "./assets/Railtech2.jpg"
 import Railtech3 from "./assets/Railtech3.png"
+import Achievements from "./Achievements"
 
 const data = { 
-    navItems:["Education","Projects", "Competitions", "About me"],
+    navItems:["Education","Competitions","Certificates", "Contact me"],
     scroll:["Y2 Engineering Science Student", "Aspiring Engineer", "Loves Web Development","Likes Computers"],
     Educationinfo:[
         {
@@ -47,7 +48,7 @@ const data = {
             shortdescription:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work ",
             longdescription: "The challenge we aim to address is the real-time monitoring of workers' movement on rail tracks to ensure their accountability and safety. The current system faces several key challenges: the Operations Control Centre (OCC) lacks real-time visibility of work parties, making it difficult to verify if workers are in the correct work zones after booking in. Additionally, there is heavy reliance on the Person in Charge (PIC) to manually track up to 20 workers, increasing the risk of human error, especially in recording the number of  personnel entering and exiting the work zone. To address these challenges, our solution is an Android app that utilises Received Signal Strength Indicator (RSSI) to estimate the distance from an Access Point (AP), followed by trilateration between three APs with known coordinates to determine the precise location of workers on the tracks. The Extended Kalman Filter is then planned to be applied to reduce noise and improve accuracy, achieving a location accuracy of up to 5 metres. The PIC would be able to visualise the workers' positions on a map, updating their coordinates approximately every 32 seconds. This solution enhances the PIC's ability to monitor workers remotely from a centralised screen, reducing the dependency on manual oversight. Additionally, the system streamlines the check-in and check-out process using QR codes, further improving efficiency and reducing the potential for human errors.",
             link:"https://github.com/AloneTotally/Railtech-server",
-            images:[Railtech3,Railtech1,Railtech2],
+            images:[Railtech3],//Railtech1,Railtech2],
             tags:["Competitions","Engineering","Web Development", "Projects","Kotlin","Research"],
         },
         {
@@ -66,13 +67,37 @@ const data = {
             shortdescription:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work ",
             longdescription:"Wor ",
             link:"www.google.com",
-            images:[Railtech1],
+            images:[Railtech3],
             tags:["Competitions"]
         },
         
         
         
-    ]
+    ],
+    achievementFilter:["All","2025","2024", "2023",">2022"],
+    Achievements:[
+        {
+            date:"2024",
+            title:"Railtech Grand Innovation Challenge Top 5",
+            description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
+            Certificate:"img1",
+            link: "https://idk.com",
+        },
+        {
+            date:"2023",
+            title:"Module Prize",
+            description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
+            Certificate:"img1",
+            link: "https://idk.com",
+        },
+        {
+            date:"2022",
+            title:"Steamunity",
+            description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
+            Certificate:"img1",
+            link: "https://idk.com",
+        },
+    ],
     
 
 }

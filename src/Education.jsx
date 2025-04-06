@@ -24,15 +24,15 @@ function Timeline(){
         
          <div className='h-20 w-15 primary-300 ml-15 rounded-t-3xl'></div>
             
-            {education.map((education,index) => (
+            {education.map((education) => (
                 <div className='text-white flex '>
                     
                     <div className='flex-col mr-4 ml-4 mb-0 mt-0 items-center justify-center flex box-border '>
                         
                 {/*<img className=" w-auto h-20 border-4 rounded-2xl primary-300  min-w-[148px]"src={education.logo} alt={education.school}*/}
-                {education.id == 1 ? <img key={index} className=" w-auto h-20 border-4 rounded-2xl primary-300  min-w-[148px]"src={SSTicon} alt={education.school}/> : <img className=" w-auto h-38 border-4 rounded-2xl primary-300  min-w-[148px]"src={NPicon} alt={education.school}/>}
+                {education.id == 1 ? <img key={education.title} className=" w-auto h-20 border-4 rounded-2xl primary-300  min-w-[148px]"src={SSTicon} alt={education.school}/> : <img className=" w-auto h-38 border-4 rounded-2xl primary-300  min-w-[148px]"src={NPicon} alt={education.school}/>}
                 
-                <div key={index} className='line w-15.5 h-170 primary-300'></div>
+                <div  className='line w-15.5 h-170 primary-300'></div>
                 </div>
                 
                 
@@ -45,12 +45,12 @@ function Timeline(){
                     <h2 className='text-4xl'>{education.date}</h2>
                     <h3 className='text-3xl '>{education.title}</h3>
                     <p className='p-1'>Grade: {education.Grade}</p>
-                    {education.Activities.map((activity, index) => ( 
-                        <p className="p-1" key={index}>{activity}</p>
+                    {education.Activities.map((activity) => ( 
+                        <p className="p-1" key={activity}>{activity}</p>
                     ))}
                     <h3 className='underline text-2xl'>Competitions & Achievements</h3>
-                    {education.Achievements.map((achievement, index) => (
-                        <p className="p-1" key={index}>{achievement}</p>
+                    {education.Achievements.map((achievement) => (
+                        <p className="p-1" key={achievement}>{achievement}</p>
                     ))}
                 </div>
             </div>
@@ -67,9 +67,7 @@ function Timeline(){
 function Education() {
     return (
         <div className='flex flex-col  ml-0'>
-            
-            <Timeline/>
-            
+            <Timeline/> 
         </div>
     );
   }

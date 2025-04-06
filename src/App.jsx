@@ -6,7 +6,7 @@ import data from './data'
 import HomeIcon from './assets/Home.svg'
 import ReactIcon from './assets/react.svg'
 import Education from './Education.jsx'
-import Projects from './Projects.jsx'
+import Achievements from './Achievements.jsx'
 import Competitions from './Competitions.jsx'
 import Contact from './Contact.jsx'
 import Home from './Home.jsx'
@@ -26,8 +26,8 @@ function App() {
       </BrowserRouter> */}
       <Home/>
       <Education/>
-      <Projects/>
       <Competitions/>
+      <Achievements/>
       <Contact/>
       </div>
     </>

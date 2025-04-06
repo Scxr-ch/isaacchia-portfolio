@@ -52,15 +52,17 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
         return () => window.removeEventListener("keydown", handleRight);
       }, [right]);
     return (
-    
+            
         <div className="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center " >
+            
+            
             {currentIndex >0 &&<button onClick={left} >
             <img src={leftArrow} className="absolute z-50 top-1/2 w-auto h-15 bg-white rounded-full p-2 shadow-lg ml-3 left-0  "></img>
         </button>}
                 <div className={`primary-300 p-2 h-[80%] rounded-xl w-[80%] flex ${Animates}`} key={currentIndex} id={currentIndex}>
                 
                 <div className='w-[50%] overflow-auto '>
-                    {currentIndex === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
+                    {project.index === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
                     {project.images.map((image, index) => (
                         <img key={index} src={image} className='w-[80%] h-auto m-auto mt-2'></img>
                     ))}
@@ -85,6 +87,7 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
                 </button>
             </div>
             {currentIndex < Competition.length-1 &&<button onClick={right} >
+                
             <img src={rightArrow} className="absolute z-50 top-1/2  w-auto h-15 bg-white rounded-full p-2 shadow-lg mr-3 right-0 "></img>
         </button>}
         </div>
@@ -157,7 +160,7 @@ function Competitions() {
                 
                 
                 <button 
-                    onClick={() => { setShowModal(true); setCurrentIndex(project.index); setProject(project); }} 
+                    onClick={() => { setShowModal(true); setCurrentIndex(Competition.indexOf(project)); setProject(project); }} 
                     className="primary-300 justify-center items-center border-2 rounded-2xl l-auto min-h-[550px]"
                 >
                     {project.images.length > 0 && <img 
@@ -192,7 +195,8 @@ function Competitions() {
 
             
            {ShowModal && <Modal project={Project} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setProject={setProject} setShowModal={setShowModal} Colors = {Colors} Competition={Competition} /> }
-           {Competition.length > 3  && !Loadmore && <button className='text-white text-center mt-5 text-xl items-center justify-center flex m-auto '  id="load"onClick={() => setLoadmore(true)} >Load more </button> }
+           {Competition.length > 3  && !Loadmore && <button className='secondary-400 p-3 rounded-2xl text-white text-center mt-5 text-xl items-center justify-center flex m-auto '  id="load" onClick={() => setLoadmore(true)} >Load more </button> }
+           {Loadmore && <button className='secondary-400 p-3 rounded-2xl text-white text-center mt-5 text-xl items-center justify-center flex m-auto '  id="load" onClick={() => setLoadmore(false)} >Load less </button> }
            </div>
         </div>
         
