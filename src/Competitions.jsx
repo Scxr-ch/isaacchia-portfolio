@@ -6,20 +6,25 @@ import CloseIcon from "./assets/Close.png"
 import Mediafile from "./assets/Media1.mp4"
 import leftArrow from "./assets/Arrow_left.svg"
 import rightArrow from "./assets/Arrow_right.svg"
+import './index.css'
 function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, setProject, Competition}) {
-    
+    const [Animates, setAnimates] = useState("modal")
      // Prevent rendering if project is not ready
-    
+    const animates= null
     const left=() =>{
         if (currentIndex > 0) {
             setCurrentIndex(currentIndex - 1);
             setProject(Competition[currentIndex - 1]);
+            setAnimates("rightmodal");
+           
         }
     }
     const right=() =>{
         if (currentIndex < Competition.length - 1) {
             setCurrentIndex(currentIndex + 1);
             setProject(Competition[currentIndex + 1]);
+            
+            setAnimates("leftmodal");
         }
     }
     useEffect(() => {
@@ -48,11 +53,11 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
       }, [right]);
     return (
     
-        <div className="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center" >
+        <div className="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center " >
             {currentIndex >0 &&<button onClick={left} >
             <img src={leftArrow} className="absolute z-50 top-1/2 w-auto h-15 bg-white rounded-full p-2 shadow-lg ml-3 left-0  "></img>
         </button>}
-                <div className="primary-300 p-2 h-[80%] rounded-xl w-[80%] flex">
+                <div className={`primary-300 p-2 h-[80%] rounded-xl w-[80%] flex ${Animates}`} key={currentIndex} id={currentIndex}>
                 
                 <div className='w-[50%] overflow-auto '>
                     {currentIndex === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
@@ -146,7 +151,7 @@ function Competitions() {
             </div>
            <div>
            {Competition.length > 0 ? (
-    <div className="grid-cols-3 grid gap-12">
+    <div className="grid-cols-3 grid gap-12 ">
         {(Loadmore ? Competition :Competition.slice(0,3)).map((project, index) => (
             <div key={index} className="m-3">
                 
@@ -158,7 +163,7 @@ function Competitions() {
                     {project.images.length > 0 && <img 
                         src={project.images[0]} 
                         alt={project.title} 
-                        className="w-[80%] items-center justify-center m-auto mt-2"
+                        className="w-[80%] items-center justify-center m-auto mt-2 rounded-xl"
                     />}
                     
                     <h2 className="text-center text-white text-2xl mt-5">{project.title}</h2>
