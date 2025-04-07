@@ -4,6 +4,23 @@ import Railtech1 from "./assets/Railtech1.jpg"
 import Railtech2 from "./assets/Railtech2.jpg"
 import Railtech3 from "./assets/Railtech3.png"
 import Achievements from "./Achievements"
+import Gdprogawardcert from "./assets/Gdprogawardcert.jpg"
+import Railtechcert from "./assets/Railtechcert.jpg"
+import Steamunitystage1 from "./assets/Steamunitystage1.jpg"
+import Steamunitystage2 from "./assets/Steamunitystage2.jpg"
+import olvlcert from "./assets/olvlcert.jpg"
+import Progcert from "./assets/Progcert.jpg"
+import rapidchemchallcert from "./assets/rapidchemchallcert.jpg"
+import Roboroarzcert from "./assets/Roboroarzcert.jpg"
+import SST3mcert from "./assets/SST3mcert.jpg"
+import AMCcert from "./assets/AMCcert.jpg"
+import Sasmocert from "./assets/Sasmocert.jpg"
+import whitehackscert from "./assets/whitehackscert.jpg"
+import YCEPcert from "./assets/YCEPcert.png"
+import Eleccircuit from "./assets/Eleccircuit.jpg"
+import Eleccircuitschematics from "./assets/Eleccircuitschematics.png"
+
+
 
 const data = { 
     navItems:["Education","Competitions","Certificates", "Contact me"],
@@ -36,6 +53,7 @@ const data = {
             index:0,
             title:"Portfolio Website",
             shortdescription:"My first web development project using tailwind css and react native to create a responsive portfolio website",
+            popupdescription:"link to Github repo",
             longdescription:"This was my first time using tailwind css and react native to create a responsive portfolio website. I used tailwind css to create a responsive layout and react native to create a mobile app version of the website. I also used react router to create a single page application. Creating this project allowed me to familiarise more with CSS stylings and understand more about react native and web development as a whole, such as good practices to take note of when creating a website.",
             link:"www.goooogle.com",
             images:[SSTicon,NPicon],
@@ -46,29 +64,32 @@ const data = {
             index:1,
             title:"Railtech Grand Innovation Challenge Top 5",
             shortdescription:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work ",
+            popupdescription:"link to Github repo",
             longdescription: "The challenge we aim to address is the real-time monitoring of workers' movement on rail tracks to ensure their accountability and safety. The current system faces several key challenges: the Operations Control Centre (OCC) lacks real-time visibility of work parties, making it difficult to verify if workers are in the correct work zones after booking in. Additionally, there is heavy reliance on the Person in Charge (PIC) to manually track up to 20 workers, increasing the risk of human error, especially in recording the number of  personnel entering and exiting the work zone. To address these challenges, our solution is an Android app that utilises Received Signal Strength Indicator (RSSI) to estimate the distance from an Access Point (AP), followed by trilateration between three APs with known coordinates to determine the precise location of workers on the tracks. The Extended Kalman Filter is then planned to be applied to reduce noise and improve accuracy, achieving a location accuracy of up to 5 metres. The PIC would be able to visualise the workers' positions on a map, updating their coordinates approximately every 32 seconds. This solution enhances the PIC's ability to monitor workers remotely from a centralised screen, reducing the dependency on manual oversight. Additionally, the system streamlines the check-in and check-out process using QR codes, further improving efficiency and reducing the potential for human errors.",
             link:"https://github.com/AloneTotally/Railtech-server",
             images:[Railtech3],//Railtech1,Railtech2],
-            tags:["Competitions","Engineering","Web Development", "Projects","Kotlin","Research"],
-        },
-        {
-            index:2,
-            title:"Portfolio Website",
-            shortdescription:"My first web development project using tailwind css and react native to create a responsive portfolio website",
-            longdescription:"This was my first time using tailwind css and react native to create a responsive portfolio website. I used tailwind css to create a responsive layout and react native to create a mobile app version of the website. I also used react router to create a single page application. Creating this project allowed me to familiarise more with CSS stylings and understand more about react native and web development as a whole, such as good practices to take note of when creating a website.",
-            link:"www.goooogle.com",
-            images:[SSTicon,NPicon],
-            tags:["Web Development", "React", "Tailwind CSS","Projects"],
-
+            tags:["Competitions","Engineering","Web Development","Kotlin","Research"],
         },
         {
             index:3,
-            title:"Railtech Grand Innovation Challenge Top 5",
-            shortdescription:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work ",
-            longdescription:"Wor ",
-            link:"www.google.com",
-            images:[Railtech3],
-            tags:["Competitions"]
+            title:"C Project",
+            shortdescription:"Programmed a randomise math quiz using C with data validation",
+            popupdescription:"link to Github repo",
+            longdescription:"This was my first ever programming project and my first time using C. I used C to create a randomise math quiz that randomises the questions given from a set of questions and the answers such that the answer location would be different and the answer value would always be different. I made use of different libraries such as the <time.h> to record how long the user took to complete the quiz and math.h to do complex math calculations. I also covered pointers in the project, which helped give me a better understanding on how data is being stored in a computer, and how to manipulate the data in a more efficient way. Data validation was implemented to ensure that the user input is valid and to prevent any errors from happening, which would have a error message if there was any error. This project helped me understand more about C and how to use it to create a program that is both efficient and user friendly. In the future I am planning to implement a graphical user interface (GUI) to make the program more user friendly and to make it easier for the user to use the program.",
+            link:"https://github.com/Scxr-ch/C-project",
+            images:[],
+            tags:["Projects", "Programming", "C"],
+
+        },
+        {
+            index:4,
+            title:"Electronics Project",
+            shortdescription:"Created a circuit for a probe to alert the chef based on the temperature of the food",
+            popupdescription:"link to report",
+            longdescription:"",
+            link:"https://docs.google.com/document/d/1xQiDDQ3iMF-yojAMU6_NNuBuhpT5iTta6CYvc3h2ObQ/edit?usp=sharing",
+            images:[Eleccircuit,Eleccircuitschematics],
+            tags:["Engineering","Projects",]
         },
         
         
@@ -80,21 +101,21 @@ const data = {
             date:"2024",
             title:"Railtech Grand Innovation Challenge Top 5",
             description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
-            Certificate:"img1",
+            Certificate:Railtechcert,
             link: "https://idk.com",
         },
         {
-            date:"2023",
+            date:"2025",
             title:"Module Prize",
-            description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
-            Certificate:"img1",
+            description:"Awarded for the best performance in a programming module",
+            Certificate:Progcert,
             link: "https://idk.com",
         },
         {
             date:"2022",
             title:"Steamunity",
             description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
-            Certificate:"img1",
+            Certificate:[Steamunitystage1,Steamunitystage2],
             link: "https://idk.com",
         },
     ],

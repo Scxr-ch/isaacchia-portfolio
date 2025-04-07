@@ -9,6 +9,7 @@ import rightArrow from "./assets/Arrow_right.svg"
 import './index.css'
 function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, setProject, Competition}) {
     const [Animates, setAnimates] = useState("modal")
+    const [link, setLink] = useState(false)
      // Prevent rendering if project is not ready
     const animates= null
     const left=() =>{
@@ -68,8 +69,8 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
                     ))}
                 </div>
                 <div className="overflow-auto w-[50%] ">
-                <a className="text-black text-3xl font-bold mt-3 hover:underline" href={project.link} target="_blank">{project.title}</a>
-                
+                <a className="text-black text-3xl font-bold mt-3 hover:underline" href={project.link} /*onMouseEnter={setLink(true)} onMouseLeave={setLink(false)} key={project.title}*/ target="_blank">{project.title}</a>
+                {link &&<p className=''>{project.popupdescription}</p>}
                 
                 <p className="text-white mt-4 px-4">{project.longdescription}</p>
                 <div className='grid grid-cols-3 mt-5   text-center w-full '>
@@ -146,7 +147,7 @@ function Competitions() {
             <div className='mt-10 flex items-center justify-center'>
                 {Filtertypes.map((type, index) => (
                     
-                    <button key={index} className={`border-2 border-white  rounded-3xl m-3 p-2 w-38 h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
+                    <button key={index} className={`border-2 border-white  rounded-3xl m-3 p-2 w-[11%] h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
                         {type}
                     </button>
                 ))}
@@ -196,7 +197,7 @@ function Competitions() {
             
            {ShowModal && <Modal project={Project} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setProject={setProject} setShowModal={setShowModal} Colors = {Colors} Competition={Competition} /> }
            {Competition.length > 3  && !Loadmore && <button className='secondary-400 p-3 rounded-2xl text-white text-center mt-5 text-xl items-center justify-center flex m-auto '  id="load" onClick={() => setLoadmore(true)} >Load more </button> }
-           {Loadmore && <button className='secondary-400 p-3 rounded-2xl text-white text-center mt-5 text-xl items-center justify-center flex m-auto '  id="load" onClick={() => setLoadmore(false)} >Load less </button> }
+           {Competition.length > 3 &&Loadmore && <button className='secondary-400 p-3 rounded-2xl text-white text-center mt-5 text-xl items-center justify-center flex m-auto '  id="load" onClick={() => setLoadmore(false)} >Load less </button> }
            </div>
         </div>
         
