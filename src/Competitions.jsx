@@ -170,7 +170,7 @@ function Competitions() {
                         className="w-[80%] items-center justify-center m-auto mt-2 rounded-xl"
                     />}
                     
-                    <h2 className="text-center text-white text-2xl mt-5">{project.title}</h2>
+                    <h2 className="text-center text-white text-xl mt-5  md:text-2xl">{project.title}</h2>
                     <p className="mt-5">{project.shortdescription}</p>
                     <div className="grid grid-cols-3 mt-3 ">
                     {project.tags.slice(0,3).map((tag, index) =>  (
