@@ -4,10 +4,21 @@ import { useEffect } from 'react'
 import data from './data'
 function Modal({achievement ,achievementIndex, handleModal}){
     return(
-        <div className='flex'>  
-            <button className='rounded-b-2xl secondary-500 text-white p-4 text-left w-[80%] font-medium' onMouseLeave={()=> handleModal(null)}>
+        <div className='flex rounded-b-2xl secondary-500 w-[80%]'>  
+            <button className=' text-white p-4 text-left font-medium ' onMouseLeave={()=> handleModal(null)}>
                 <p className=''>{achievement.date}</p>
-                <p>{achievement.description}</p></button>
+                <p>{achievement.description}</p>
+                </button><div className=' flex flex-row justify-center'>
+                {achievement.Certificate.length > 1 ? achievement.Certificate.map((certificate,index) => (
+                    <img src={certificate} className="w-[40%] h-auto rounded-2xl m-3"></img>))
+                    :
+                    (
+                        
+                    <img src={achievement.Certificate} className="w-[50%] max-w-[1000px]  h-auto rounded-2xl m-3"></img>
+                    
+                    )
+                }
+                </div>
         </div>
     )
 
