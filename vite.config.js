@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
     react(),
   ],
-  base:"/isaacchia-portfolio/",
+  base:"/portfolio_website/",
 });
