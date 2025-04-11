@@ -5,16 +5,16 @@ import data from './data'
 function Modal({achievement ,achievementIndex, handleModal}){
     return(
         <div className='flex rounded-b-2xl secondary-500 w-[80%]'>  
-            <button className=' text-white p-4 text-left font-medium ' onMouseLeave={()=> handleModal(null)}>
+            <button className=' text-white p-4 pr-0 text-left font-medium ' onMouseLeave={()=> handleModal(null)}>
                 <p className=''>{achievement.date}</p>
                 <p>{achievement.description}</p>
-                </button><div className=' flex flex-row justify-center'>
+                </button><div className=' flex flex-column justify-center overflow-auto'>
                 {achievement.Certificate.length > 1 ? achievement.Certificate.map((certificate,index) => (
                     <img src={certificate} className="w-[40%] h-auto rounded-2xl m-3"></img>))
                     :
                     (
                         
-                    <img src={achievement.Certificate} className="w-[50%] max-w-[1000px]  h-auto rounded-2xl m-3"></img>
+                    <img src={achievement.Certificate} className="w-[50%] max-w-[1000px]  h-auto rounded-2xl "></img>
                     
                     )
                 }
@@ -43,7 +43,7 @@ function Achievements() {
             setAchievements(data.Achievements)
         } 
         else if (filter ===">2022"){
-                const filteredData = data.Achievements.filter((achievement) => achievement.date < 2022);
+                const filteredData = data.Achievements.filter((achievement) => achievement.date <= 2022);
                 setAchievements(filteredData)
             }
         else {
@@ -82,7 +82,7 @@ function Achievements() {
                     </div>
                     ):(
                         
-                    <p>no Achievement</p>
+                    <p className='text-white font-bold text-center text-2xl'>No Achievement</p>
                     
                     )}
                 </div>

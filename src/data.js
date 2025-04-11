@@ -24,6 +24,11 @@ import ELeccircuitpt2 from "./assets/Eleccircuitpt2.png"
 import balloonsatellitecover from "./assets/balloonsatellitecover.png"
 import balloonsatellitehardware from "./assets/balloonsatellitehardware.png"
 import balloonsatellitehardwarept2 from "./assets/balloonsatellitehardwarept2.png"
+import Sjcho2023 from "./assets/Sjcho2023.png"
+import Sjcho2022 from "./assets/Sjcho2022.png"
+import Astrigue2023 from "./assets/Astrigue2023.png"
+import Responsivewebdesign from "./assets/Responsivewebdesign.png"
+import bizsafelvl2 from "./assets/BizSAFElvl2.png"
 
 
 const data = { 
@@ -133,6 +138,85 @@ const data = {
             Certificate:[Steamunitystage1,Steamunitystage2],
             link: "https://idk.com",
         },
+        {
+            date:"2025",
+            title:"Roboroarz participation",
+            description:"Participated in a line tracing robotics competition",
+            Certificate:[Roboroarzcert],
+        },
+        {
+            date:"2025",
+            title:"Whitehacks CTF participation",
+            description:"Participated in a cybersecurity CTF competition",
+            Certificate:[whitehackscert],
+        },
+        {
+            date:"2025",
+            title:"YCEP CTF participation(top 16)",
+            description:"Participated in a cybersecurity CTF competition organised by CSA",
+            Certificate:[YCEPcert],
+        },
+        {
+            date:"2025",
+            title:"BizSAFE Level 2",
+            description:"Completed the BizSAFE Level 2 training",
+            Certificate:[bizsafelvl2],
+        },
+        {
+            date:"2023",
+            title:"Singapore Junior Chemistry Olympiad 2023",
+            description:"Participated in the Singapore Junior Chemistry Olympiad",
+            Certificate:[Sjcho2023],
+        },
+        {
+            date:"2024",
+            title:"Singapore and Asian Math Olympiad(SASMO)",
+            description:"Participated in the Singapore and Asian Math Olympiad(SASMO)",
+            Certificate:[Sasmocert],
+        },
+        {
+            date:"2024",
+            title:"Responsive Web Design Certification",
+            description:"Completed the Responsive Web Design Certification from freeCodeCamp",
+            Certificate:[Responsivewebdesign],
+        },
+        {
+            date:"2023",
+            title:"Astrigue 2023",
+            description:"Participated in the astronomy competition organised by SST",
+            Certificate:[Astrigue2023],
+        },
+        {
+            date:"2023",
+            title:"Rapid Chem Challenge",
+            description:"Participated in a Chemistry quiz competition orgnised by NUS",
+            Certificate:[rapidchemchallcert],
+        },
+        {
+            date:"2023",
+            title:"Certificate of Proficiency (Austrailian Math Competition)",
+            description:"Participated in the Austrailian Math Competition(AMC) and awarded a certificate of proficiency",
+            Certificate:[AMCcert],
+        },
+        {
+            date:"2022",
+            title:"Singapore Junior Chemistry Olympiad 2022",
+            description:"Participated in the Singapore Junior Chemistry Olympiad",
+            Certificate:[Sjcho2022],
+        },
+        {
+            date:"2022",
+            title:"MOE Good Progress Award",
+            description:"Awarded for top 10% improvement in academic performance",
+            Certificate:[Gdprogawardcert],
+        },
+        {
+            date:"2020",
+            title:"SST-3M Innoscience Challenge(Top-16)",
+            description:"Achieved top 16 for a innovative competition ",
+            Certificate:[SST3mcert],
+        },
+
     ],
     
 
