@@ -125,3 +125,10 @@
     0%{transform:translateY(-15%);opacity:0.5}
     100%{transform:translateY(0);opacity:1;}
 }
+.loader{  
+    animation: load 1s both ease-in;
+}
+@keyframes load{
+    0%{transform:translateY(10%);}
+    100%{transform:translateY(0%);}
+}

@@ -120,7 +120,7 @@ const data = {
         {
             date:"2024",
             title:"Railtech Grand Innovation Challenge Top 5",
-            description:"Created an indoor positioning system using trilateration and RSSI to locate users in the underground tracks to ensure their safety while doing maintenance work",
+            description:"Top 5 in Railtech Grand Open Innovation Challenge",
             Certificate:[Railtechcert],
             link: "https://idk.com",
         },
@@ -134,7 +134,7 @@ const data = {
         {
             date:"2025",
             title:"Steamunity Junior Design Innovator(Advanced)",
-            description:"participated in a 3week long program to develop STEAM solutions to solve community problems",
+            description:"Completed a 3week program to create STEAM solutions for the community ",
             Certificate:[Steamunitystage1,Steamunitystage2],
             link: "https://idk.com",
         },
@@ -157,7 +157,7 @@ const data = {
             Certificate:[YCEPcert],
         },
         {
-            date:"2025",
+            date:"2024",
             title:"BizSAFE Level 2",
             description:"Completed the BizSAFE Level 2 training",
             Certificate:[bizsafelvl2],
@@ -169,7 +169,7 @@ const data = {
             Certificate:[Sjcho2023],
         },
         {
-            date:"2024",
+            date:"2023",
             title:"Singapore and Asian Math Olympiad(SASMO)",
             description:"Participated in the Singapore and Asian Math Olympiad(SASMO)",
             Certificate:[Sasmocert],
@@ -183,7 +183,7 @@ const data = {
         {
             date:"2023",
             title:"Astrigue 2023",
-            description:"Participated in the astronomy competition organised by SST",
+            description:"Participated in the astronomy competition organised by RI",
             Certificate:[Astrigue2023],
         },
         {
@@ -195,7 +195,7 @@ const data = {
         {
             date:"2023",
             title:"Certificate of Proficiency (Austrailian Math Competition)",
-            description:"Participated in the Austrailian Math Competition(AMC) and awarded a certificate of proficiency",
+            description:"Awarded a certificate of proficiency",
             Certificate:[AMCcert],
         },
         {
@@ -216,6 +216,33 @@ const data = {
             description:"Achieved top 16 for a innovative competition ",
             Certificate:[SST3mcert],
         },
+
+    ],
+    contactInfo : [
+        {   
+            title:"LinkedIn",
+            icon:"",
+            link:"https://www.linkedin.com/in/isaac--chia",
+            description:null,
+        },
+        {
+            title:"Github",
+            icon:"",
+            link:"https://github.com/Scxr-ch",
+            description:null,
+        },
+        {
+            title:"Email(school)",
+            icon:"",
+            link:null,
+            description:"S10266054@connect.np.edu.sg"
+        },
+        {
+            title:"Email(Personal)",
+            icon:"",
+            link:null,
+            description:"Chia_isaac@yahoo.com/isaacchia056@gmail.com",
+        }
 
     ],
     

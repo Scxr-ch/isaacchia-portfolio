@@ -1,10 +1,10 @@
 import React from 'react';
-
+import data from "./data";
 function Contact() {
     return (
         <div>
-            <h2>Education</h2>
-            <p>Details about your education go here.</p>
+            <h2 className='text-white text-center text-5xl font-bold mt-50'> Contact Me</h2>
+            
         </div>
     );
 }

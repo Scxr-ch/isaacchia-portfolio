@@ -13,26 +13,30 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
      // Prevent rendering if project is not ready
     const animates= null
     const left=() =>{
-        if (currentIndex > 0) {
+        if (currentIndex > 0) 
+        {
             setCurrentIndex(currentIndex - 1);
             setProject(Competition[currentIndex - 1]);
             setAnimates("rightmodal");
            
         }
     }
-    const right=() =>{
-        if (currentIndex < Competition.length - 1) {
-            setCurrentIndex(currentIndex + 1);
-            setProject(Competition[currentIndex + 1]);
-            
-            setAnimates("leftmodal");
+    const right=() =>
+        {
+            if (currentIndex < Competition.length - 1) 
+            {
+                setCurrentIndex(currentIndex + 1);
+                setProject(Competition[currentIndex + 1]);
+                setAnimates("leftmodal");
+            }
         }
-    }
     useEffect(() => {
-        const handleLeft = (e) => {
-          if (currentIndex > 0 && e.key === "ArrowLeft") {
-            left();
-          }
+        const handleLeft = (e) => 
+        {
+          if (currentIndex > 0 && e.key === "ArrowLeft") 
+            {
+                left();
+            }
         };
     
         window.addEventListener("keydown", handleLeft);
@@ -41,9 +45,11 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
         return () => window.removeEventListener("keydown", handleLeft);
       }, [left]);
       useEffect(() => {
-        const handleRight = (e) => {
-          if (currentIndex < Competition.length-1 && e.key === "ArrowRight") {
-            right();
+        const handleRight = (e) => 
+        {
+          if (currentIndex < Competition.length-1 && e.key === "ArrowRight") 
+        {
+                right();
           }
         };
     
@@ -56,41 +62,40 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
             
         <div className="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center " >
             
-            
             {currentIndex >0 &&<button onClick={left} >
             <img src={leftArrow} className="absolute z-50 top-1/2 w-auto h-15 bg-white rounded-full p-2 shadow-lg ml-3 left-0  "></img>
-        </button>}
+            </button>}
                 <div className={`primary-300 p-2 h-[80%] rounded-xl w-[80%] flex ${Animates}`} key={currentIndex} id={currentIndex}>
                 
-                <div className='w-[50%] overflow-auto '>
-                    {project.index === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
-                    {project.images.map((image, index) => (
-                        <img key={index} src={image} className='w-[80%] h-auto m-auto mt-2'></img>
-                    ))}
-                </div>
-                <div className="overflow-auto w-[50%] ">
-                <a className="text-black text-3xl font-bold mt-3 hover:underline" href={project.link} /*onMouseEnter={setLink(true)} onMouseLeave={setLink(false)} key={project.title}*/ target="_blank">{project.title}</a>
-                {link &&<p className=''>{project.popupdescription}</p>}
-                
-                <p className="text-white mt-4 px-4">{project.longdescription}</p>
-                <div className='grid grid-cols-3 mt-5   text-center w-full '>
-                {project.tags.map((tag, index) =>  (
-                        <div 
-                            key={index} 
-                            className={`border-2 border-white rounded-3xl m-2 w-[30] h-auto ${Colors[index % Colors.length]}`}
-                        >
-                           {tag}
+                    <div className='w-[50%] overflow-auto '>
+                        {project.index === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
+                        {project.images.map((image, index) => (
+                            <img key={index} src={image} className='w-[80%] h-auto m-auto mt-2'></img>
+                        ))}
+                    </div>
+                    <div className="overflow-auto w-[50%] ">
+                        <a className="text-black text-3xl font-bold mt-3 hover:underline" href={project.link} /*onMouseEnter={setLink(true)} onMouseLeave={setLink(false)} key={project.title}*/ target="_blank">{project.title}</a>
+                        {link &&<p className=''>{project.popupdescription}</p>}
+                        
+                        <p className="text-white mt-4 px-4">{project.longdescription}</p>
+                        <div className='grid grid-cols-3 mt-5   text-center w-full '>
+                            {project.tags.map((tag, index) =>  (
+                                    <div 
+                                        key={index} 
+                                        className={`border-2 border-white rounded-3xl m-2 w-[30] h-auto ${Colors[index % Colors.length]}`}
+                                    >
+                                    {tag}
+                                    </div>
+                                ))}
                         </div>
-                    ))}
+                    </div>
+                    <button onClick={() => setShowModal(null)} className=" p-2  bg-white rounded-[100%] float-right h-15 w-15">
+                        <img src={CloseIcon}></img>
+                    </button>
                 </div>
-                </div><button onClick={() => setShowModal(null)} className=" p-2  bg-white rounded-[100%] float-right h-15 w-15">
-                    <img src={CloseIcon}></img>
-                </button>
-            </div>
-            {currentIndex < Competition.length-1 &&<button onClick={right} >
-                
-            <img src={rightArrow} className="absolute z-50 top-1/2  w-auto h-15 bg-white rounded-full p-2 shadow-lg mr-3 right-0 "></img>
-        </button>}
+                {currentIndex < Competition.length-1 &&<button onClick={right} >    
+                <img src={rightArrow} className="absolute z-50 top-1/2  w-auto h-15 bg-white rounded-full p-2 shadow-lg mr-3 right-0 "></img>
+            </button>}
         </div>
         
     );
@@ -143,17 +148,14 @@ function Competitions() {
     return (
         <div id="Competitions">
             <h2 className='text-6xl text-white text-center font-bold mt-50'>Projects and Competitions</h2>
-            
             <div className='mt-10 flex items-center justify-center'>
-                {Filtertypes.map((type, index) => (
-                    
+                {Filtertypes.map((type, index) => ( 
                     <button key={index} className={`border-2 border-white  rounded-3xl m-3 p-2 w-[11%] h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
                         {type}
                     </button>
                 ))}
-            
             </div>
-           <div>
+        <div>
            {Competition.length > 0 ? (
     <div className="grid-cols-3 grid gap-12 ">
         {(Loadmore ? Competition :Competition.slice(0,3)).map((project, index) => (
