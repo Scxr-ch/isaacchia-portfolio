@@ -18,7 +18,7 @@ import Sasmocert from "./assets/Sasmocert.jpg"
 import whitehackscert from "./assets/whitehackscert.jpg"
 import YCEPcert from "./assets/YCEPcert.png"
 import Eleccircuit from "./assets/Eleccircuit.jpg"
-import Eleccircuitschematics from "./assets/Eleccircuitschematics.png"
+// import Eleccircuitschematics from "./assets/Eleccircuitschematics.png"
 import Eleccircuitblock from "./assets/Eleccircuitblock.png"
 import ELeccircuitpt2 from "./assets/Eleccircuitpt2.png"
 import balloonsatellitecover from "./assets/balloonsatellitecover.png"
@@ -100,7 +100,7 @@ const data = {
             popupdescription:"link to report",
             longdescription:"A electronics project that spanned across 6months to complete,make used Integrated Circuit(IC) Chips to implement the circuit.I implemented a circuit that would give different types of alerts when the food is at different temperatures, making use of the 555 timer IC astable and monostable configuration to achieve that. I used a series of logic gates and voltage comparators  to implement the circuit logic in order to achieve the desired output.An enhancement was added to add an additional alarm for a higher temperature, and a set of inputs for the user to choose which alarms they want to go off using SR-latches. This project has given me a better understanding about IC chips and their usage in real life scenarios, and how they could be used instead of programmable microcontrollers to achieve the same result. It allowed me to dive deeper into the world of electronics, sparking an interest in microelectronics in me.",
             link:"https://docs.google.com/document/d/1xQiDDQ3iMF-yojAMU6_NNuBuhpT5iTta6CYvc3h2ObQ/edit?usp=sharing",
-            images:[Eleccircuit,Eleccircuitschematics,Eleccircuitblock,ELeccircuitpt2],
+            images:[Eleccircuit,,Eleccircuitblock,ELeccircuitpt2],//Eleccircuitschematics
             tags:["Engineering","Projects","Electronics","Research"],
         },
         {
