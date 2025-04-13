@@ -39,6 +39,9 @@
 .quaternary-600 { background-color: #1A3068; }
 .quaternary-700 { background-color: #081433; }
 
+body{
+    background-color: #202f56;
+}
 .scroll{
     animation:  infinite-scroll 25s linear infinite;
 }

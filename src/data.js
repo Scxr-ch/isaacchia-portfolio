@@ -29,6 +29,9 @@ import Sjcho2022 from "./assets/Sjcho2022.png"
 import Astrigue2023 from "./assets/Astrigue2023.png"
 import Responsivewebdesign from "./assets/Responsivewebdesign.png"
 import bizsafelvl2 from "./assets/BizSAFElvl2.png"
+import mailIcon from "./assets/mailwhite.png"
+import linkedinIcon from "./assets/linkedinwhite.png"
+import githubIcon from "./assets/githubwhite.png"
 
 
 const data = { 
@@ -221,27 +224,27 @@ const data = {
     contactInfo : [
         {   
             title:"LinkedIn",
-            icon:"",
+            icon:linkedinIcon,
             link:"https://www.linkedin.com/in/isaac--chia",
-            description:null,
+            description:"www.linkedin.com/in/isaac--chia",
         },
         {
             title:"Github",
-            icon:"",
+            icon:githubIcon,
             link:"https://github.com/Scxr-ch",
-            description:null,
+            description:"github.com/Scxr-ch",
         },
         {
             title:"Email(school)",
-            icon:"",
-            link:null,
+            icon:mailIcon,
+            link:"S10266054@connect.np.edu.sg",
             description:"S10266054@connect.np.edu.sg"
         },
         {
             title:"Email(Personal)",
-            icon:"",
-            link:null,
-            description:"Chia_isaac@yahoo.com/isaacchia056@gmail.com",
+            icon:mailIcon,
+            link:'Chia_isaac@yahoo.com',
+            description:"Chia_isaac@yahoo.com",
         }
 
     ],
