@@ -25,12 +25,12 @@ function Timeline(){
          {/* <div className='h-20 w-15 primary-300 ml-15 rounded-t-3xl'></div> */}
            <div className='line top-50 left-17 h-[200vh] w-10 primary-300 rounded-t-3xl rounded-b-3xl absolute z-0'></div> 
             {education.map((education) => (
-                <div className='text-white flex '>
+                <div className='text-white flex 'key={education.title}>
                     
                     <div className='flex-col mr-4 ml-4 mb-0 mt-0 items-center justify-center flex box-border '>
                         
                 {/*<img className=" w-auto h-20 border-4 rounded-2xl primary-300  min-w-[148px]"src={education.logo} alt={education.school}*/}
-                {education.id == 1 ? <img key={education.title} className=" w-auto h-20 mb-140 border-4 rounded-2xl primary-300  min-w-[148px] z-10"src={SSTicon} alt={education.school}/> : <img className="mb-130  w-auto h-38 border-4 rounded-2xl primary-300  min-w-[148px] z-10"src={NPicon} alt={education.school}/>}
+                {education.id == 1 ? <img  className=" w-auto h-20 mb-140 border-4 rounded-2xl primary-300  min-w-[148px] z-10"src={SSTicon} alt={education.school}/> : <img className="mb-130  w-auto h-38 border-4 rounded-2xl primary-300  min-w-[148px] z-10"src={NPicon} alt={education.school}/>}
                 
                 {/* <div  className='line w-15.5 h-170 primary-300'></div> */}
                 </div>

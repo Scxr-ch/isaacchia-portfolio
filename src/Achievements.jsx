@@ -134,11 +134,11 @@ function Achievements() {
                     
                         {Achievements.slice(0,content).map((achievement,index) => (
                             toggle ? (
-                                <div>
+                                <div key={achievement.title}>
                                     <button className={`text-2xl text-white p-2 loader font-bold ${index === achievementIndex ?"secondary-500 rounded-t-2xl w-[80%] text-left":""}`} onClick={()=> handleModal(index)} >{achievement.title}</button>
                                     {index === achievementIndex &&<Modal achievement={achievement} achievementIndex={achievementIndex} handleModal={handleModal} pic={pic} setPic={setPic}/>}
                                 </div>):(
-                                    <div className='w-[80%] h-[80%] secondary-400 m-5 p-6 pb-13 rounded-2xl  '>
+                                    <div className='w-[80%] h-[80%] secondary-400 m-5 p-6 pb-13 rounded-2xl  'key={achievement.title}>
                                         <img  className="max-h-[30vh] w-auto m-auto"src={achievement.Certificate[0]} onClick={() => handlePicture(achievement.Certificate[0])}></img>
                                         <p className='text-white font-bold'>{achievement.title}</p>
                                         <p className='text-white'>{achievement.date}</p>

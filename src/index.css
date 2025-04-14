@@ -135,3 +135,19 @@ body{
     0%{transform:translateY(10%);}
     100%{transform:translateY(0%);}
 }
+.btnscroll{
+    animation: btnscroll 0.2s both ease-in-out;
+}
+
+@keyframes btnscroll{
+    0%{transform: translateY(80%); opacity: 0;}
+    100%{transform:translateY(0%);opacity:1;}
+}
+.antibtnscroll{
+    animation: antibtnscroll 0.4s both ease-in;
+}
+
+@keyframes antibtnscroll{
+    0%{transform: translateY(0%); display:block; opacity:1;}
+    100%{transform:translateY(80%); display:none;opacity:0;}
+}

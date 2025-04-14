@@ -11,6 +11,7 @@ import Competitions from './Competitions.jsx'
 import Contact from './Contact.jsx'
 import Home from './Home.jsx'
 import Pagenotfound from './Pagenotfound.jsx'
+import ArrowUpIcon from "./assets/upload.png"
 
 {/* hover:bg-black hover:border-black hover:text-white */}
 function NavElements({header}) {
@@ -28,41 +29,77 @@ function NavElements({header}) {
 function HomeBtn(){
   return(
     <div className='p-5 bg-white border-blue-50 border-6 rounded-full flex items-center justify-center home'>
-      <a to='#Home'>
+      <a href='#Home'>
         <img src={HomeIcon} alt='Home Icon' className='w-13 h-12'></img>
       </a>
     </div>
   )
 }
+function Btnscrolltop(){
+  const [show, setShow] = useState(false)
+  const Backtotop=() =>{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  useEffect(()=>{
+    window.onscroll = () =>{
+      if (window.scrollY > 70){
+        setShow(true)
+      }
+      else{
+        setShow(false)
+      }
+    }
+  },[])
+  
+  return(
+    <div className={`fixed z-50 bottom-5 right-10  p-10 ${show ? "block btnscroll":"antibtnscroll"}`}>
+      <button className='rounded-full bg-black p-auto w-13 h-auto' onClick={Backtotop}>
+        <img className="w-full"src={ArrowUpIcon}></img>
+      </button>
+    </div>
+  )
+}
 const Navbar = () => {
-    {/*const [navItems,setnavItems] = useState(["Education", "Projects", "Competitions","Contact me"]) 
-      border-7 border-amber-50  bg-blue-400 */}
     const[onetime,setonetime] = useState(0)
     const[scroll, setScroll] = useState(false)
+    const[scrolltracker, setScrollTracker] = useState(0)
     useEffect(()=>{
       const handleScroll =() =>{
+
+        setScroll(window.scrollY > 0)
         
       }
-    
+      window.addEventListener("scroll", handleScroll)
+      return () =>{ window.removeEventListener("scroll", handleScroll)}
     },[])
-    return (
+    useEffect(()=>{
+      var keepTrackScroll = 0;
+      keepTrackScroll = scrolltracker
+      setScrollTracker(window.scrollY)
       
-      <div className={`max-w-screen-xl text-center justify-center hidden md:flex mx-auto pt-10 sticky top-0 z-50 bg-transparent ${onscroll ? "bg-white": ""}`}>
-        <nav className='p-2 m-0 flex item-center list-none gap-5  mx-auto  rounded-4xl '>
-            {data.navItems.map((item,index)=>(
-            <>
-              {/*math.floor rounds down to nearest int  */}
-              {index === Math.floor(data.navItems.length/2) && <HomeBtn/>}
-              {/*Use backtick to do JS */}
-              <NavElements key={index} header={item} className={`
-              ${index === 0 || index === 3 ? "first" : ""}
-              ${index === 1 || index === 2 ? "second" : ""}
-              `
-            }
-              />
-            </>
-            ))}
-        </nav>
+       
+    })
+    return (
+      <div>
+        <div className={`max-w-screen-xl hidden md:flex mx-auto mt-10 fixed right-0 left-0 top-0 z-50 bg-transparent   ${scroll ? " rounded-4xl bg-white ": ""}`}>
+          <nav className=' p-2 m-0 flex item-center list-none gap-5 mx-auto rounded-4xl '>
+              {data.navItems.map((item,index)=>(
+              <>
+                {/*math.floor rounds down to nearest int  */}
+                {index === Math.floor(data.navItems.length/2) && <HomeBtn/>}
+                {/*Use backtick to do JS */}
+                <NavElements key={index} header={item} className={`
+                ${index === 0 || index === 3 ? "first" : ""}
+                ${index === 1 || index === 2 ? "second" : ""}
+                `
+              }
+                />
+              </>
+              ))}
+          </nav>
+        </div>
+        <Btnscrolltop/>
       </div>
     );
   };
