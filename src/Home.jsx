@@ -7,29 +7,6 @@ import data from "./data";
 import HomeIcon from "./assets/Home.svg";
 import ReactIcon from "./assets/react.svg";
 
-
-{/* hover:bg-black hover:border-black hover:text-white */}
-function NavElements({header}) {
-    return (
-     
-        <div className='mt-5 box-border primary-400 p-4 mr-2 ml-2 border-0 rounded-3xl w-auto h-max'>
-            <Link to={`/${header}`}>
-                {header}
-            </Link>
-        </div>
-         
-    
-  );
-  }
-  function HomeBtn(){
-    return(
-      <div className='p-5 bg-white border-blue-50 border-6 rounded-full flex items-center justify-center home'>
-        <a href="#Home">
-          <img src={HomeIcon} alt='Home Icon' className='w-13 h-12'></img>
-        </a>
-      </div>
-    )
-  }
   function LandingPage(){
     return(
       <div className=' m-12 justify-center flex items-center text-center flex-col' id="Home">
@@ -55,37 +32,9 @@ function NavElements({header}) {
     );
   }
   
-  
-  const Navbar = () => {
-    {/*const [navItems,setnavItems] = useState(["Education", "Projects", "Competitions","Contact me"]) 
-      border-7 border-amber-50  bg-blue-400 */}
-    const[onetime,setonetime] = useState(0)
-    return (
-      
-      <div className='max-w-screen-xl text-center justify-center hidden md:flex mx-auto pt-10 '>
-        <nav className='p-2 m-0 flex item-center list-none gap-5  mx-auto  rounded-4xl '>
-            {data.navItems.map((item,index)=>(
-            <>
-              {/*math.floor rounds down to nearest int  */}
-              {index === Math.floor(data.navItems.length/2) && <HomeBtn/>}
-              {/*Use backtick to do JS */}
-              <NavElements key={index} header={item} className={`
-              ${index === 0 || index === 3 ? "first" : ""}
-              ${index === 1 || index === 2 ? "second" : ""}
-              `
-            }
-              />
-            </>
-            ))}
-        </nav>
-      </div>
-    );
-  };
-  
   function Home(){
     return(
         <div>
-        <Navbar/>
         <LandingPage/>
         <Infscrollbar/>
         </div>

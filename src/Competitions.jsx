@@ -104,7 +104,7 @@ function Competitions() {
     const[Competition, setCompetition] = useState(data.Projectinfo)
     const[Filter, setFilter] = useState("ALL")
     const Colors = ["primary-500","primary-200","primary-300","primary-400","secondary-400","tertiary-400","secondary-500","tertiary-200",]
-    const Filtertypes= ["ALL","Competitions","Projects","Web Development","Engineering"]
+    const Filtertypes= ["ALL","Competitions","Projects","Programming","Engineering"]
     const [ShowModal, setShowModal] = useState(false)
     const [Project, setProject] = useState(null)
     const [Loadmore, setLoadmore] = useState(false)
