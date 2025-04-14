@@ -15,21 +15,20 @@ import Home from './Home.jsx'
 function App() {
   return (
     <>
-    <div className='primary-600'>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/Education' element={<Education/>}/>
-          <Route path='/Competitions' element={<Competitions/>}/>
-          <Route path='/Contact' element={<Contact/>}/>
+          <Route path='Education' element={<Education/>}/>
+          <Route path='Competitions' element={<Competitions/>}/>
+          <Route path='Achievements' element={<Achievements/>}/>
+          <Route path='Contact' element={<Contact/>}/>
         </Routes>
-      </BrowserRouter> */}
-      <Home/>
+      </BrowserRouter>
+      {/* <Home/>
       <Education/>
       <Competitions/>
       <Achievements/>
-      <Contact/>
-      </div>
+      <Contact/> */}
     </>
   );
 }

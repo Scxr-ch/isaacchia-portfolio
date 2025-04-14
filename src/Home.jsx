@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter,Route,Routes, NavLink  } from "react-router-dom";
+import { BrowserRouter,Route,Routes, NavLink ,Link   } from "react-router-dom";
 //import {Hashlink as Link} from "react-router-hash-link";
 import "./index.css";
 import data from "./data";
@@ -13,9 +13,9 @@ function NavElements({header}) {
     return (
      
         <div className='mt-5 box-border primary-400 p-4 mr-2 ml-2 border-0 rounded-3xl w-auto h-max'>
-            <a href={`#${header}`}>
+            <Link to={`/${header}`}>
                 {header}
-            </a>
+            </Link>
         </div>
          
     
