@@ -150,7 +150,7 @@ function Competitions({setShow, setScroll}) {
             <h2 className='text-6xl text-white text-center font-bold mt-50'>Projects and Competitions</h2>
             <div className='mt-10 flex items-center justify-center'>
                 {Filtertypes.map((type, index) => ( 
-                    <button key={index} className={`border-2 border-white  rounded-3xl m-3 p-2 w-[11%] h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
+                    <button key={index} className={`border-2 border-white w-[20%] rounded-3xl m-3 p-2 md:w-[11%] h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
                         {type}
                     </button>
                 ))}
@@ -178,7 +178,7 @@ function Competitions({setShow, setScroll}) {
                     {project.tags.slice(0,3).map((tag, index) =>  (
                         <div 
                             key={index} 
-                            className={`border-2 border-white rounded-3xl m-2 w-[30] h-auto ${Colors[index % Colors.length]}`}
+                            className={`border-2 border-white rounded-3xl m-2 w-[30]  text-wrap md:w-[8vw] h-auto ${Colors[index % Colors.length]}`}
                         >
                            {tag}
                         </div>

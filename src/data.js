@@ -68,7 +68,7 @@ const data = {
             popupdescription:"link to Github repo",
             longdescription:"This was my first time using tailwind css and react native to create a responsive portfolio website. I used tailwind css to create a responsive layout and react native to create a mobile app version of the website. I also used react router to create a single page application. Creating this project allowed me to familiarise more with CSS stylings and understand more about react native and web development as a whole, such as good practices to take note of when creating a website.",
             link:"https://isaacchia-portfolio.vercel.app/",
-            images:[SSTicon,NPicon],
+            images:[NPicon],
             tags:["Programming" ,"Projects","Web Development", "React", "Tailwind CSS"],
 
         },

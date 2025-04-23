@@ -64,7 +64,8 @@ const Navbar = ({setScroll, scroll, setShow,show}) => {
     const[onetime,setonetime] = useState(0)
     //const[scroll, setScroll] = useState(false)
     const[scrolltracker, setScrollTracker] = useState(0)
-    
+    const[mobilenavbar, setMobilenavbar] = useState(false)
+    const[dissapear, setDissapear] = useState(false)
     const appear = useRef(0)
     
 
@@ -77,24 +78,45 @@ const Navbar = ({setScroll, scroll, setShow,show}) => {
         
         if(currentScroll > appear.current){
           setScroll(true)
+          setDissapear(false)
         }
         else if (currentScroll < appear.current){
           setScroll(false)
+          setTimeout(()=>{
+            setDissapear(true)
+          },500)
+        }
+        else if(window.scrollY == 20){
+          setScroll(true)
         }
         else{
           setScroll(true)
         }
         setTimeout(()=>{
           appear.current = currentScroll
-        },1000)
-        
+        },1500)
       }
       window.addEventListener("scroll", handleNav)
       return () =>{ window.removeEventListener("scroll", handleNav)} 
     },[])
+    useEffect(()=>{
+      var mediaQuery = window.matchMedia("(max-width: 768px)")
+      const handlemMediaQuery=() => {
+        if(mediaQuery.matches){
+          setMobilenavbar(true)
+        }
+        else{
+          setMobilenavbar(false)
+        }
+      }
+      mediaQuery.addEventListener("change",handlemMediaQuery)
+      return()=>{
+        mediaQuery.removeEventListener("change", handlemMediaQuery)
+      }
+    },[])
     return (
       <div>
-        <div className={`max-w-screen-xl hidden md:flex mx-auto mt-10 fixed right-0 left-0 top-0 z-50 bg-transparent  ${scroll ? " rounded-4xl bg-white ": ""}`}>
+        {!mobilenavbar ? (<div className={`max-w-screen-xl hidden md:flex mx-auto mt-10 fixed right-0 left-0 top-0 z-50 bg-transparent ${dissapear ? "md:hidden":"md:block "}  ${scroll ? "home ": "anti-home "}`}>
           <nav className=' p-2 m-0 flex item-center list-none gap-5 mx-auto rounded-4xl '>
               {data.navItems.map((item,index)=>(
               <>
@@ -111,6 +133,13 @@ const Navbar = ({setScroll, scroll, setShow,show}) => {
               ))}
           </nav>
         </div>
+        ):(
+        <div>
+          <button className='fixed rounded-full bg-white items-center justify-center z-50'>
+            <img ></img>
+          </button>
+        </div>)
+        }
         <Btnscrolltop setShow={setShow} show={show}/>
       </div>
     );
