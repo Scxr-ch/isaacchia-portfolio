@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from "motion/react"
 import { BrowserRouter,Routes, Route,Link } from 'react-router-dom'
 import './index.css'
@@ -35,8 +35,8 @@ function HomeBtn(){
     </div>
   )
 }
-function Btnscrolltop(){
-  const [show, setShow] = useState(false)
+function Btnscrolltop({show, setShow}) {
+  //const [show, setShow] = useState(false)
   const Backtotop=() =>{
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -60,29 +60,41 @@ function Btnscrolltop(){
     </div>
   )
 }
-const Navbar = () => {
+const Navbar = ({setScroll, scroll, setShow,show}) => {
     const[onetime,setonetime] = useState(0)
-    const[scroll, setScroll] = useState(false)
+    //const[scroll, setScroll] = useState(false)
     const[scrolltracker, setScrollTracker] = useState(0)
-    useEffect(()=>{
-      const handleScroll =() =>{
+    
+    const appear = useRef(0)
+    
 
-        setScroll(window.scrollY > 0)
+    useEffect(()=>{
+      const handleNav =() =>{
+        const currentScroll = window.scrollY
+        console.log("current "+currentScroll)
+        console.log("past "+appear.current)
+        console.log("state"+scroll)
+        
+        if(currentScroll > appear.current){
+          setScroll(true)
+        }
+        else if (currentScroll < appear.current){
+          setScroll(false)
+        }
+        else{
+          setScroll(true)
+        }
+        setTimeout(()=>{
+          appear.current = currentScroll
+        },1000)
         
       }
-      window.addEventListener("scroll", handleScroll)
-      return () =>{ window.removeEventListener("scroll", handleScroll)}
+      window.addEventListener("scroll", handleNav)
+      return () =>{ window.removeEventListener("scroll", handleNav)} 
     },[])
-    useEffect(()=>{
-      var keepTrackScroll = 0;
-      keepTrackScroll = scrolltracker
-      setScrollTracker(window.scrollY)
-      
-       
-    })
     return (
       <div>
-        <div className={`max-w-screen-xl hidden md:flex mx-auto mt-10 fixed right-0 left-0 top-0 z-50 bg-transparent   ${scroll ? " rounded-4xl bg-white ": ""}`}>
+        <div className={`max-w-screen-xl hidden md:flex mx-auto mt-10 fixed right-0 left-0 top-0 z-50 bg-transparent  ${scroll ? " rounded-4xl bg-white ": ""}`}>
           <nav className=' p-2 m-0 flex item-center list-none gap-5 mx-auto rounded-4xl '>
               {data.navItems.map((item,index)=>(
               <>
@@ -99,12 +111,15 @@ const Navbar = () => {
               ))}
           </nav>
         </div>
-        <Btnscrolltop/>
+        <Btnscrolltop setShow={setShow} show={show}/>
       </div>
     );
   };
 function App() {
+  const [show, setShow] = useState(false)
+  const [scroll, setScroll] = useState(false)
   return (
+    
     <>
       {/* <BrowserRouter>
       <Navbar></Navbar>
@@ -117,11 +132,11 @@ function App() {
           <Route path="*" element={<Pagenotfound/>}/>
         </Routes>
       </BrowserRouter> */}
-      <Navbar></Navbar>
-      <div id='Home'><Home/></div>
+      <Navbar setScroll={setScroll} setShow={setShow} show={show} scroll={scroll}></Navbar>
+      <div ><Home/></div>
       <div id='Education'><Education/></div>
-      <div id='Competitions'><Competitions/></div>
-      <div id='Achievements'><Achievements/></div>
+      <div id='Competitions'><Competitions setScroll={setScroll} setShow={setShow}/></div>
+      <div id='Achievements'><Achievements setScrolls={setScroll} setShow={setShow}/></div>
       <div id="Contact"><Contact/></div>
     </>
   );

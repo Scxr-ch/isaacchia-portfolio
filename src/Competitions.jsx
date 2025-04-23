@@ -100,7 +100,7 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
         
     );
 }
-function Competitions() {
+function Competitions({setShow, setScroll}) {
     const[Competition, setCompetition] = useState(data.Projectinfo)
     const[Filter, setFilter] = useState("ALL")
     const Colors = ["primary-500","primary-200","primary-300","primary-400","secondary-400","tertiary-400","secondary-500","tertiary-200",]
@@ -157,13 +157,13 @@ function Competitions() {
             </div>
         <div>
            {Competition.length > 0 ? (
-    <div className="grid-cols-3 grid gap-12 ">
+    <div className="md:grid-cols-3 grid grid-col-1 w-[70%] md:w-auto m-auto md:gap-12 ">
         {(Loadmore ? Competition :Competition.slice(0,3)).map((project, index) => (
             <div key={index} className="m-3">
                 
                 
                 <button 
-                    onClick={() => { setShowModal(true); setCurrentIndex(Competition.indexOf(project)); setProject(project); }} 
+                    onClick={() => { setShowModal(true); setCurrentIndex(Competition.indexOf(project)); setProject(project); setShow(false); setScroll(false);}} 
                     className="primary-300 justify-center items-center border-2 rounded-2xl l-auto min-h-[550px]"
                 >
                     {project.images.length > 0 && <img 

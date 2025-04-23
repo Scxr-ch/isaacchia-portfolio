@@ -3,6 +3,7 @@ import data from './data';
 import rowIcon from "./assets/Row.png";
 import gridIcon from "./assets/Grid.png";
 import "./index.css";
+import filterIcon from "./assets/Filter_icon.png"
 function Picture({certificate, setPic, setScroll}){
     const modalref = useRef(null);
     // const handleClickOutside = (event) => {
@@ -65,13 +66,13 @@ function Togglebutton({toggle, setToggle, setContent}){
     }
     
     return(
-    <div className={`rounded-3xl w-[6%] h-auto m-3 ml-8 ${toggle ? "bg-amber-200" : "bg-gray-300"}`}onClick={() => reset()}>
+    <div className={`rounded-3xl  w-[19%] md:w-[6%] h-10 m-3 ml-8 ${toggle ? "bg-amber-200" : "bg-gray-300"}`}onClick={() => reset()}>
         <div className={`flex justify-center items-center bg-white rounded-full w-10 h-10 ${toggle ? "translate-x-0" : "translate-x-10"} transition-transform duration-300 ease-in-out`}>
             {toggle ? <img src={rowIcon} className='p-auto m-auto'></img> : <img src={gridIcon}></img>}
         </div>
     </div>)   
 }
-function Achievements() {
+function Achievements({setScrolls,setShow}) {
     const [pic,setPic] = useState(null)
     const [toggle, setToggle] = useState(false)
     const [Filter, setFilter] = useState(data.achievementFilter[0])
@@ -80,6 +81,7 @@ function Achievements() {
     const [achievementIndex, setAchievementIndex] = useState(null)
     const [content, setContent] = useState(3)
     const [scroll, setScroll] = useState(false)
+    const [mobilefilter, setMobileFilter] = useState(false)
     const handleModal = (index) => {
         setAchievementIndex(index)
         setModal(!modal)
@@ -119,27 +121,43 @@ function Achievements() {
     return (
         <div className=''>
             <h2 className='text-5xl text-white text-center font-bold mt-50'>Achievements & Certificates</h2>
-            <div className='tertiary-400 rounded-2xl m-5 '>
-                <div className='flex  pl-10  w-full  '>
-                    {data.achievementFilter.map((filter)=>(
-                        <button className={`m-3 ml-5 text-2xl  float-left  ${Filter === filter ? "text-white" : "text-gray-300"} transition `} onClick={() =>{ handleFilter(filter); setContent(3)}} key={filter}>
-                            {filter}
-                        </button>  
-                    ))}
+            <div className='tertiary-400 rounded-2xl md:m-6 md:w-[96%] w-[70%] justify-center items-center m-auto'>
+                <div className='flex  pl-10  md:w-full'>
+                    <div className='hidden md:flex'>
+                        {data.achievementFilter.map((filter)=>(
+                            <button className={`m-3 ml-5 text-2xl  float-left  ${Filter === filter ? "text-white" : "text-gray-300"} transition `} onClick={() =>{ handleFilter(filter); setContent(3)}} key={filter}>
+                                {filter}
+                            </button>  
+                        ))}
+                    </div>
+                        {/* for mobile view  */}
+                    <div className='flex flex-col md:hidden w-[25%] h-auto justify-center items-center text-center m-3 bg-white rounded-3xl ' onClick={()=>setMobileFilter(!mobilefilter)}>
+                        <div className='flex '><img className='shrink md:shrink-0' src={filterIcon}></img>
+                            <p className='px-4 font-semibold text-xl'>Filter</p></div>
+                            {mobilefilter &&<div className='  w-full inline-block'>
+                            <ul className='text-center bg-white rounded-b-2xl w-auto h-auto '>
+                            {data.achievementFilter.map((filter)=>(
+                            <li className={` z-10  text-black font-xl font-semibold m-3 cursor-pointer transition ${Filter === filter ? "" : "bg-gray-300"} transition `} onClick={() =>{ handleFilter(filter); setContent(3)}} key={filter}>
+                                {filter}
+                            </li>  
+                            ))}
+                            </ul>
+                        </div>}  
+                    </div>
                     <Togglebutton toggle={toggle} setToggle={setToggle} setContent={setContent}></Togglebutton>
                 </div>
                 <div>
                     {Achievements.length >0 ? (
-                    <div className={`flex  ${toggle ?" flex flex-col ml-[2%]": "grid-cols-3 gap-12 grid"} `} >
+                    <div className={`flex  ${toggle ?" flex flex-col ml-[2%]": "items-center m-auto p-auto justify-center grid-col-1 grid md:grid-cols-3 md:gap-12 md:grid"} `} >
                     
                         {Achievements.slice(0,content).map((achievement,index) => (
                             toggle ? (
                                 <div key={achievement.title}>
-                                    <button className={`text-2xl text-white p-2 loader font-bold ${index === achievementIndex ?"secondary-500 rounded-t-2xl w-[80%] text-left":""}`} onClick={()=> handleModal(index)} >{achievement.title}</button>
+                                    <button className={`text-2xl text-white p-2  text-left loader font-bold ${index === achievementIndex ?"secondary-500 rounded-t-2xl w-[80%] text-left":""}`} onClick={()=> handleModal(index)} >{achievement.title}</button>
                                     {index === achievementIndex &&<Modal achievement={achievement} achievementIndex={achievementIndex} handleModal={handleModal} pic={pic} setPic={setPic}/>}
                                 </div>):(
                                     <div className='w-[80%] h-[80%] secondary-400 m-5 p-6 pb-13 rounded-2xl  'key={achievement.title}>
-                                        <img  className="max-h-[30vh] w-auto m-auto"src={achievement.Certificate[0]} onClick={() => handlePicture(achievement.Certificate[0])}></img>
+                                        <img  className="max-h-[30vh] w-auto h-auto m-auto"src={achievement.Certificate[0]} onClick={() => {handlePicture(achievement.Certificate[0]);setScrolls(false);setShow(false)}}></img>
                                         <p className='text-white font-bold'>{achievement.title}</p>
                                         <p className='text-white'>{achievement.date}</p>
                                         <p>{achievement.description}</p>

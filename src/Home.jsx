@@ -35,9 +35,10 @@ import ReactIcon from "./assets/react.svg";
   function Home(){
     return(
         <div className="mt-60">
-        <LandingPage/>
-        <Infscrollbar/>
+          <LandingPage/>
+          <Infscrollbar/>
         </div>
+        
     )
   }
   
