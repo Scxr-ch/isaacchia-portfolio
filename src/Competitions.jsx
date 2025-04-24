@@ -65,20 +65,20 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
             {currentIndex >0 &&<button onClick={left} >
             <img src={leftArrow} className="absolute z-50 top-1/2 w-auto h-15 bg-white rounded-full p-2 shadow-lg ml-3 left-0  "></img>
             </button>}
-                <div className={`primary-300 p-2 h-[80%] rounded-xl w-[80%] flex ${Animates}`} key={currentIndex} id={currentIndex}>
+                <div className={`primary-300 p-2 h-[auto] max-h-[80vh] rounded-xl w-[80%]  md:flex ${Animates}`} key={currentIndex} id={currentIndex}>
                 
-                    <div className='w-[50%] overflow-auto '>
+                    <div className=' w-[100%] md:w-[50%] overflow-auto '>
                         {project.index === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
                         {project.images.map((image, index) => (
                             <img key={index} src={image} className='w-[80%] h-auto m-auto mt-2'></img>
                         ))}
                     </div>
-                    <div className="overflow-auto w-[50%] ">
+                    <div className="w-[100%] overflow-auto md:w-[50%] ">
                         <a className="text-black text-3xl font-bold mt-3 hover:underline" href={project.link} /*onMouseEnter={setLink(true)} onMouseLeave={setLink(false)} key={project.title}*/ target="_blank">{project.title}</a>
                         {link &&<p className=''>{project.popupdescription}</p>}
                         
                         <p className="text-white mt-4 px-4">{project.longdescription}</p>
-                        <div className='grid grid-cols-3 mt-5   text-center w-full '>
+                        <div className='grid grid-cols-3 mt-5  text-center w-full '>
                             {project.tags.map((tag, index) =>  (
                                     <div 
                                         key={index} 

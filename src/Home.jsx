@@ -19,7 +19,7 @@ import ReactIcon from "./assets/react.svg";
   function Infscrollbar() {
     
     return (
-      <div className="flex secondary-300 overflow-hidden border-2 whitespace-nowrap righteous-regular inset-shadow-sm rounded-3xl p-2 m-2">
+      <div className="flex secondary-300 overflow-hidden border-2 whitespace-nowrap righteous-regular inset-shadow-sm rounded-3xl p-2  m-1 md:m-2">
         <ul className=" w-max scroll flex">
           {[...data.scroll,...data.scroll].map((value, index) => (
             <li key={index} className="flex gap-2">

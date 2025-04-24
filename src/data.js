@@ -36,7 +36,7 @@ import githubIcon from "./assets/githubwhite.png"
 
 const data = { 
     navItems:["Education","Competitions","Achievements", "Contact"],
-    scroll:["Y2 Engineering Science Student", "Aspiring Engineer", "Loves Programming","Likes Computers"],
+    scroll:["Y2 Engineering Science Student", "Aspiring Engineer", "Likes Programming","Interested in Tech"],
     Educationinfo:[
         {
             id:"1",
