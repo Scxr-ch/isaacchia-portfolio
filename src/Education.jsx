@@ -23,7 +23,7 @@ function Timeline(){
         </div>*/}
         
          {/* <div className='h-20 w-15 primary-300 ml-15 rounded-t-3xl'></div> */}
-           <div className='line top-50 left-17 h-[200vh] w-10 primary-300 rounded-t-3xl rounded-b-3xl absolute z-0'></div> 
+           <div className='line top-50 left-17 h-[120vh] md:h-[200vh] w-10 primary-300 rounded-t-3xl rounded-b-3xl absolute z-0'></div> 
             {education.map((education) => (
                 <div className='text-white flex 'key={education.title}>
                     

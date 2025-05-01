@@ -32,13 +32,13 @@ function Picture({certificate, setPic, setScroll}){
     
     return(
         <div className='flex justify-center items-center fixed inset-0 bg-opacity-30 backdrop-blur-sm ' onClick={() => {setPic(false);setScroll(false)}} >
-                <img src={certificate} className="max-w-[60%] w-auto m-auto max-h-[600px] rounded-2xl"></img>
+                <img src={certificate} className=" max-w-[100vw] md:max-w-[60%] w-auto m-auto max-h-[600px] rounded-2xl"></img>
         </div>
     )
 }   
 function Modal({achievement ,achievementIndex, handleModal, pic, setPic}){
     return(
-        <div className='flex rounded-b-2xl secondary-500 w-[80%] 'onMouseLeave={()=> handleModal(null)}>  
+        <div className='flex rounded-b-2xl secondary-500 w-[60vw] md:w-[80vw] 'onMouseLeave={()=> handleModal(null)}>  
             <button className=' text-white p-4 pr-0 text-left font-medium ' >
                 <p className=''>{achievement.date}</p>
                 <p>{achievement.description}</p>
@@ -46,10 +46,10 @@ function Modal({achievement ,achievementIndex, handleModal, pic, setPic}){
                 <div className=' flex flex-column justify-center ' >
                     
                         {achievement.Certificate.length > 1 ? achievement.Certificate.map((certificate,index) => (
-                            <img src={certificate} className="w-[40%] h-auto rounded-2xl m-3" onClick={() =>setPic(certificate)}></img>))
+                            <img src={certificate} className=" w-[40%] h-auto rounded-2xl m-3" onClick={() =>setPic(certificate)}></img>))
                             :
                             (   
-                            <img src={achievement.Certificate} onClick={()=>setPic(achievement.Certificate)} className="w-[50%] max-w-[1000px]  h-auto rounded-2xl "></img>
+                            <img src={achievement.Certificate} onClick={()=>setPic(achievement.Certificate)} className="w-[30vw] max-w-[1000px]  h-auto rounded-2xl "></img>
                             )
                         }
                 
@@ -66,8 +66,8 @@ function Togglebutton({toggle, setToggle, setContent}){
     }
     
     return(
-    <div className={`rounded-3xl  w-[19%] md:w-[6%] h-10 m-3 ml-8 ${toggle ? "bg-amber-200" : "bg-gray-300"}`}onClick={() => reset()}>
-        <div className={`flex justify-center items-center bg-white rounded-full w-10 h-10 ${toggle ? "translate-x-0" : "translate-x-10"} transition-transform duration-300 ease-in-out`}>
+    <div className={`rounded-3xl  w-[15vw] md:w-[8vw] h-10 m-3 ml-8 ${toggle ? "bg-amber-200" : "bg-gray-300"}`}onClick={() => reset()}>
+        <div className={`flex justify-center items-center bg-white rounded-full w-10 h-10 ${toggle ? "translate-x-0" : "translate-x-[9vw] md:translate-x-[5vw]"} transition-transform duration-300 ease-in-out`}>
             {toggle ? <img src={rowIcon} className='p-auto m-auto'></img> : <img src={gridIcon}></img>}
         </div>
     </div>)   
@@ -121,8 +121,8 @@ function Achievements({setScrolls,setShow}) {
     return (
         <div className=''>
             <h2 className='text-5xl text-white text-center font-bold mt-50'>Achievements & Certificates</h2>
-            <div className='tertiary-400 rounded-2xl md:m-6 md:w-[96%] w-[70%] justify-center items-center m-auto'>
-                <div className='flex  pl-10  md:w-full'>
+            <div className='tertiary-400 rounded-2xl  md:m-6 md:w-[95vw] w-[70vw] justify-center items-center m-auto'>
+                <div className='flex pl-10 md:w-full'>
                     <div className='hidden md:flex'>
                         {data.achievementFilter.map((filter)=>(
                             <button className={`m-3 ml-5 text-2xl  float-left  ${Filter === filter ? "text-white" : "text-gray-300"} transition `} onClick={() =>{ handleFilter(filter); setContent(3)}} key={filter}>
@@ -131,7 +131,7 @@ function Achievements({setScrolls,setShow}) {
                         ))}
                     </div>
                         {/* for mobile view  */}
-                    <div className='flex flex-col md:hidden w-[25%] h-auto justify-center items-center text-center m-3 bg-white rounded-3xl ' onClick={()=>setMobileFilter(!mobilefilter)}>
+                    <div className='flex flex-col md:hidden w-[20vw] h-auto justify-center items-center text-center m-3 bg-white rounded-3xl ' onClick={()=>setMobileFilter(!mobilefilter)}>
                         <div className='flex '><img className='shrink md:shrink-0' src={filterIcon}></img>
                             <p className='px-4 font-semibold text-xl'>Filter</p></div>
                             {mobilefilter &&<div className='  w-full inline-block'>
@@ -153,10 +153,10 @@ function Achievements({setScrolls,setShow}) {
                         {Achievements.slice(0,content).map((achievement,index) => (
                             toggle ? (
                                 <div key={achievement.title}>
-                                    <button className={`text-2xl text-white p-2  text-left loader font-bold ${index === achievementIndex ?"secondary-500 rounded-t-2xl w-[80%] text-left":""}`} onClick={()=> handleModal(index)} >{achievement.title}</button>
+                                    <button className={`text-2xl text-white p-2  text-left loader font-bold ${index === achievementIndex ?"secondary-500 rounded-t-2xl w-[60vw] md:w-[80vw] text-left":""}`} onClick={()=> handleModal(index)} >{achievement.title}</button>
                                     {index === achievementIndex &&<Modal achievement={achievement} achievementIndex={achievementIndex} handleModal={handleModal} pic={pic} setPic={setPic}/>}
                                 </div>):(
-                                    <div className='w-[80%] h-[80%] secondary-400 m-5 p-6 pb-13 rounded-2xl  'key={achievement.title}>
+                                    <div className='w-[60vw] h-[50vh] secondary-400 m-5 p-6 pb-13 rounded-2xl  'key={achievement.title}>
                                         <img  className="max-h-[30vh] w-auto h-auto m-auto"src={achievement.Certificate[0]} onClick={() => {handlePicture(achievement.Certificate[0]);setScrolls(false);setShow(false)}}></img>
                                         <p className='text-white font-bold'>{achievement.title}</p>
                                         <p className='text-white'>{achievement.date}</p>

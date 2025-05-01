@@ -65,12 +65,12 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
             {currentIndex >0 &&<button onClick={left} >
             <img src={leftArrow} className="absolute z-50 top-1/2 w-auto h-15 bg-white rounded-full p-2 shadow-lg ml-3 left-0  "></img>
             </button>}
-                <div className={`primary-300 p-2 h-[auto] max-h-[80vh] rounded-xl w-[80%]  md:flex ${Animates}`} key={currentIndex} id={currentIndex}>
+                <div className={`primary-300 p-2 h-[auto] max-h-[80vh] rounded-xl w-[80vw]  md:flex ${Animates}`} key={currentIndex} id={currentIndex}>
                 
                     <div className=' w-[100%] md:w-[50%] overflow-auto '>
                         {project.index === 1 ? <video autoPlay loop controls className='w-full h-auto'><source src={Mediafile} type="video/mp4"/></video>:"" }
                         {project.images.map((image, index) => (
-                            <img key={index} src={image} className='w-[80%] h-auto m-auto mt-2'></img>
+                            <img key={index} src={image} className='w-[80vw] h-auto m-auto mt-2'></img>
                         ))}
                     </div>
                     <div className="w-[100%] overflow-auto md:w-[50%] ">
@@ -82,7 +82,7 @@ function Modal({ project, setShowModal, Colors, setCurrentIndex, currentIndex, s
                             {project.tags.map((tag, index) =>  (
                                     <div 
                                         key={index} 
-                                        className={`border-2 border-white rounded-3xl m-2 w-[30] h-auto ${Colors[index % Colors.length]}`}
+                                        className={`border-2 border-white rounded-3xl m-2 w-[20vh] h-auto ${Colors[index % Colors.length]}`}
                                     >
                                     {tag}
                                     </div>
@@ -150,17 +150,16 @@ function Competitions({setShow, setScroll}) {
             <h2 className='text-6xl text-white text-center font-bold mt-50'>Projects and Competitions</h2>
             <div className='mt-10 flex items-center justify-center'>
                 {Filtertypes.map((type, index) => ( 
-                    <button key={index} className={`border-2 border-white w-[20%] rounded-3xl m-3 p-2 md:w-[11%] h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
+                    <button key={index} className={`border-2 border-white w-[20vw] rounded-3xl m-3 p-2 md:w-[11vw] h-auto button ${Filter === type ? "bg-white" :Colors[index % Colors.length]}`} onClick={() => handleFilter(type)}>
                         {type}
                     </button>
                 ))}
             </div>
         <div>
            {Competition.length > 0 ? (
-    <div className="md:grid-cols-3 grid grid-col-1 w-[70%] md:w-auto m-auto md:gap-12 ">
+    <div className="md:grid-cols-3 grid grid-col-1 w-[70vw] md:w-auto m-auto md:gap-12 ">
         {(Loadmore ? Competition :Competition.slice(0,3)).map((project, index) => (
             <div key={index} className="m-3">
-                
                 
                 <button 
                     onClick={() => { setShowModal(true); setCurrentIndex(Competition.indexOf(project)); setProject(project); setShow(false); setScroll(false);}} 
@@ -178,7 +177,7 @@ function Competitions({setShow, setScroll}) {
                     {project.tags.slice(0,3).map((tag, index) =>  (
                         <div 
                             key={index} 
-                            className={`border-2 border-white rounded-3xl m-2 w-[30]  text-wrap md:w-[8vw] h-auto ${Colors[index % Colors.length]}`}
+                            className={`border-2 border-white rounded-3xl m-2 w-[20vw] text-wrap md:w-[8vw] h-auto ${Colors[index % Colors.length]}`}
                         >
                            {tag}
                         </div>
