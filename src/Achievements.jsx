@@ -156,7 +156,7 @@ function Achievements({setScrolls,setShow}) {
                                     <button className={`text-2xl text-white p-2  text-left loader font-bold ${index === achievementIndex ?"secondary-500 rounded-t-2xl w-[60vw] md:w-[80vw] text-left":""}`} onClick={()=> handleModal(index)} >{achievement.title}</button>
                                     {index === achievementIndex &&<Modal achievement={achievement} achievementIndex={achievementIndex} handleModal={handleModal} pic={pic} setPic={setPic}/>}
                                 </div>):(
-                                    <div className='w-[60vw] h-[50vh] secondary-400 m-5 p-6 pb-13 rounded-2xl  'key={achievement.title}>
+                                    <div className='w-[27vw] h-[50vh] secondary-400 m-5 p-6 pb-13 rounded-2xl  'key={achievement.title}>
                                         <img  className="max-h-[30vh] w-auto h-auto m-auto"src={achievement.Certificate[0]} onClick={() => {handlePicture(achievement.Certificate[0]);setScrolls(false);setShow(false)}}></img>
                                         <p className='text-white font-bold'>{achievement.title}</p>
                                         <p className='text-white'>{achievement.date}</p>
