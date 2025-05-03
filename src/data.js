@@ -32,8 +32,10 @@ import bizsafelvl2 from "./assets/BizSAFElvl2.png"
 import mailIcon from "./assets/mailwhite.png"
 import linkedinIcon from "./assets/linkedinwhite.png"
 import githubIcon from "./assets/githubwhite.png"
-
-
+import CS50cert from "./assets/CS50cert.png"
+import financialcalcpic1 from "./assets/financialcalcpic1.png"
+import financialcalcpic2 from "./assets/financialcalcpic2.png"
+import financialcalcpic3 from "./assets/financialcalcpic3.png"
 const data = { 
     navItems:["Education","Competitions","Achievements", "Contact"],
     scroll:["Y2 Engineering Science Student", "Aspiring Engineer", "Likes Programming","Interested in Tech"],
@@ -95,6 +97,16 @@ const data = {
         },
         {
             index:4,
+            title:"Financial Calculator website",
+            shortdescription:"Created a financial calculator website using HTML, CSS, flask and JavaScript",
+            longdescription:"The Financial Calculator is a web application designed to help users manage their personal finances by tracking stock investments, monitoring budgets, and setting savings goals. Built with Flask and powered by a real-time stock API, the app allows users to buy and sell stocks, view current holdings, and check updated quotes. It features a transaction history page that logs past buys and sells with timestamps, a budget tracker to help manage daily expenses, and a savings goal planner that calculates how much users need to save over a set number of years to reach their financial targets. The intuitive interface and organized dashboard make it easy for users to stay informed and in control of their financial journey.",
+            link: "https://github.com/Scxr-ch/financialcalculator",
+            images:[financialcalcpic1,financialcalcpic2,financialcalcpic3],
+            tags:["Projects", "Programming","Web Development","Flask","HTML","CSS"],
+
+        },
+        {
+            index:5,
             title:"Electronics Project",
             shortdescription:"Created a circuit for a probe to alert the chef based on the temperature of the food",
             popupdescription:"link to report",
@@ -104,7 +116,7 @@ const data = {
             tags:["Engineering","Projects","Electronics","Research"],
         },
         {
-            index:5,
+            index:6,
             title:"Ballon Satellite Programme",
             shortdescription:"built a satellite from scratch to collect data in the air and transmit it back",
             popupdescription:"link to Github repo",
@@ -140,6 +152,14 @@ const data = {
             description:"Completed a 3week program to create STEAM solutions for the community ",
             Certificate:[Steamunitystage1,Steamunitystage2],
             link: "https://idk.com",
+        },
+        {
+            date:"2025",
+            title:"CS50x: Introduction to Computer Science",
+            description:"Completed the CS50x course on edX",
+            Certificate:[CS50cert],
+            
+
         },
         {
             date:"2025",

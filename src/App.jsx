@@ -76,18 +76,23 @@ const Navbar = ({setScroll, scroll, setShow,show}) => {
         console.log("past "+appear.current)
         console.log("state"+scroll)
         
-        if(currentScroll > appear.current){
+        if(appear.current < 20){
           setScroll(true)
           setDissapear(false)
         }
-        else if (currentScroll < appear.current){
+        else if (currentScroll == appear.current){
+          setScroll(true)
+          setDissapear(false)
+        }
+        else if(currentScroll < appear.current){
+          setScroll(true)
+          setDissapear(false)
+        }
+        else if (currentScroll > appear.current){
           setScroll(false)
           setTimeout(()=>{
             setDissapear(true)
           },500)
-        }
-        else if(window.scrollY == 20){
-          setScroll(true)
         }
         else{
           setScroll(true)
